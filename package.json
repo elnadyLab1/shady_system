@@ -1,0 +1,8 @@
+{
+  "name": "shady_system",
+  "version": "1.0.0",
+  "description": "full system",
+  "main": "index.js",
+  "author": "shady elnady",
+  "license": "MIT"
+}
