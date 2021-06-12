@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "643557013339",
+    "project_id": "shady-system",
+    "storage_bucket": "shady-system.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643557013339:android:0a2b431768292c091b0c7e",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643557013339-njd7349j0gaudmvhkbrs79pjbdbc51ga.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_application",
+            "certificate_hash": "8d53f747354ec258eb4ced1f9b3a36c4084bd54b"
+          }
+        },
+        {
+          "client_id": "643557013339-dh57soae8v352ma31hg0jh9q61bq6mv1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBrK2_Z608KQgw5SKXKVwTJCQLPn6VVLE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643557013339-dh57soae8v352ma31hg0jh9q61bq6mv1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

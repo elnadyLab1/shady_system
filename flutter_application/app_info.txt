@@ -1,0 +1,23 @@
+Alias name: androiddebugkey
+Creation date: Mar 3, 2021
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: C=US, O=Android, CN=Android Debug
+Issuer: C=US, O=Android, CN=Android Debug
+Serial number: 1
+Valid from: Wed Mar 03 10:55:56 EET 2021 until: Fri Feb 24 10:55:56 EET 2051
+Certificate fingerprints:
+         SHA1: 8D:53:F7:47:35:4E:C2:58:EB:4C:ED:1F:9B:3A:36:C4:08:4B:D5:4B
+         SHA256: D1:9E:97:22:56:22:9B:FC:D9:C0:55:1D:60:09:0B:E5:15:B3:B2:D5:77:F4:90:FA:79:A6:21:60:B3:83:4C:1E
+Signature algorithm name: SHA1withRSA (weak)
+Subject Public Key Algorithm: 2048-bit RSA key
+
+
+
+ga0RGNYHvNM5d0SLGQfpQWAPGJ8=
+
+
+faceBook: 
+    To complete set up, add this OAuth redirect URI to your Facebook app configuration:
+        https://shady-system.firebaseapp.com/__/auth/handler
