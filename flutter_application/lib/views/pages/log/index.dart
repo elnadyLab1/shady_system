@@ -148,7 +148,7 @@ class _LogPageState extends State<LogPage> {
             ),
             AnimatedSwitcher(
               duration: Duration(milliseconds: 700),
-
+              reverseDuration: Duration(milliseconds: 700),
               //Animation 1
               // transitionBuilder: (widget, animation) => RotationTransition(
               //   turns: animation,
@@ -158,11 +158,12 @@ class _LogPageState extends State<LogPage> {
               // switchInCurve: Curves.fastLinearToSlowEaseIn,
 
               //Animation 2
-              transitionBuilder: (widget, animation) =>
+              transitionBuilder: (Widget widget, Animation<double> animation) =>
                   ScaleTransition(child: widget, scale: animation),
 
               child: selectedOption == Option.LogIn
                   ? LogIn(
+                      key: Key('LogIn'),
                       onSignUpSelected: () {
                         setState(() {
                           selectedOption = Option.SignUp;
@@ -170,6 +171,7 @@ class _LogPageState extends State<LogPage> {
                       },
                     )
                   : SignUp(
+                      key: Key('SignUp'),
                       onLogInSelected: () {
                         setState(() {
                           selectedOption = Option.LogIn;

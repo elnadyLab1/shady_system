@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 class NotFound extends StatelessWidget {
@@ -15,8 +16,9 @@ class NotFound extends StatelessWidget {
                 style: const TextStyle(fontSize: 30)),
             const SizedBox(height: 25),
             ElevatedButton(
-              child: const Text('Go To Home', style: TextStyle(fontSize: 30)),
-              onPressed: () => Get.offNamed('/home'),
+              child: const Text('Go To Log In Page',
+                  style: TextStyle(fontSize: 30)),
+              onPressed: () => Get.offNamed(Routes.log.nameToRoute()),
             )
           ],
         ),

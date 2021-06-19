@@ -1,6 +1,3 @@
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: prefer_const_constructors
-// ignore_for_file: sized_box_for_whitespace
 import 'package:flutter/material.dart';
 
 import 'package:flutter_application/utils/index.dart';
@@ -24,46 +21,58 @@ class _LogInState extends State<LogIn> {
     Size size = MediaQuery.of(context).size;
 
     return Padding(
-      padding: EdgeInsets.all(size.height > 770
-          ? 64
-          : size.height > 670
-              ? 32
-              : 16),
+      padding: EdgeInsets.all(
+        size.height > 770
+            ? 64
+            : size.height > 670
+                ? 32
+                : 32,
+      ),
       child: Center(
         child: Card(
           elevation: 4,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
-              Radius.circular(50),
+              Radius.circular(25),
             ),
+            // side: BorderSide(color: Global.kPrimaryColor),
           ),
           child: AnimatedContainer(
-            duration: Duration(milliseconds: 200),
+            duration: const Duration(milliseconds: 200),
             height: size.height *
                 (size.height > 770
                     ? 0.7
                     : size.height > 670
                         ? 0.8
-                        : 0.9),
+                        : 0.8),
             width: 500,
-            color: Colors.white,
+            decoration: const ShapeDecoration(
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(25),
+                ),
+                // side: BorderSide(color: Global.kPrimaryColor),
+              ),
+            ),
             child: Center(
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: EdgeInsets.all(40),
+                  padding: const EdgeInsets.all(30),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         "LOG IN",
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           color: Colors.grey[700],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 8,
                       ),
+                      // ignore: sized_box_for_whitespace
                       Container(
                         width: 30,
                         child: const Divider(
@@ -71,10 +80,10 @@ class _LogInState extends State<LogIn> {
                           thickness: 2,
                         ),
                       ),
-                      SizedBox(
-                        height: 32,
+                      const SizedBox(
+                        height: 30,
                       ),
-                      TextField(
+                      const TextField(
                         decoration: InputDecoration(
                           hintText: 'Email',
                           labelText: 'Email',
@@ -83,10 +92,10 @@ class _LogInState extends State<LogIn> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 32,
+                      const SizedBox(
+                        height: 30,
                       ),
-                      TextField(
+                      const TextField(
                         decoration: InputDecoration(
                           hintText: 'Password',
                           labelText: 'Password',
@@ -95,24 +104,24 @@ class _LogInState extends State<LogIn> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 64,
+                      const SizedBox(
+                        height: 60,
                       ),
                       actionButton("Log In"),
-                      SizedBox(
-                        height: 32,
+                      const SizedBox(
+                        height: 30,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            "You do not have an account?",
+                          const Text(
+                            "not have an account?",
                             style: TextStyle(
                               color: Colors.grey,
-                              fontSize: 14,
+                              fontSize: 13,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 8,
                           ),
                           GestureDetector(
@@ -122,7 +131,7 @@ class _LogInState extends State<LogIn> {
                             child: Row(
                               // ignore: prefer_const_literals_to_create_immutables
                               children: [
-                                Text(
+                                const Text(
                                   "Sign Up",
                                   style: TextStyle(
                                     color: Global.kPrimaryColor,
@@ -130,12 +139,13 @@ class _LogInState extends State<LogIn> {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 3,
                                 ),
-                                Icon(
-                                  Icons.arrow_forward,
+                                const Icon(
+                                  Icons.arrow_forward_ios,
                                   color: Global.kPrimaryColor,
+                                  size: 15,
                                 ),
                               ],
                             ),
