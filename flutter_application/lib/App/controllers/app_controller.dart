@@ -2,9 +2,9 @@ import 'package:get/get.dart';
 
 import '../index.dart';
 
-class HomeController extends GetxController {
-  HomeController({required this.homeRepository});
-  final IHomeRepository homeRepository;
+class AppController extends GetxController {
+  AppController({required this.appRepository});
+  final IAppRepository appRepository;
 
   final name = 'loading ..'.obs;
 
@@ -22,7 +22,7 @@ class HomeController extends GetxController {
   @override
   onInit() {
     super.onInit();
-    homeRepository.getPageName().then((value) => name.value = value.toString());
+    appRepository.getPageName().then((value) => name.value = value.toString());
 
     /// Called every time the variable $_ is changed
     _ever = ever(count1, (_) => p("$_ has been changed (ever)"));

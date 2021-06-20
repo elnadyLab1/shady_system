@@ -8,6 +8,7 @@ abstract class Routes {
   static const responseve = 'ResponsevePage';
   static const home = 'HomePage';
   static const logAnimation = 'LoginAnimation';
+  static const logAnimationPage = 'LogAnimationPage';
 }
 
 extension RoutesExtension on String {

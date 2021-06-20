@@ -5,7 +5,7 @@ class AddButton extends StatelessWidget {
   const AddButton({
     Key? key,
     required this.buttonGrowAnimation,
-  }): super(key: key);
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,7 +13,9 @@ class AddButton extends StatelessWidget {
       height: buttonGrowAnimation.value * 60,
       alignment: FractionalOffset.center,
       decoration: const BoxDecoration(
-          color: Color.fromRGBO(247, 64, 106, 1.0), shape: BoxShape.circle),
+        color: Color.fromRGBO(247, 64, 106, 1.0),
+        shape: BoxShape.circle,
+      ),
       child: Icon(
         Icons.add,
         size: buttonGrowAnimation.value * 40.0,

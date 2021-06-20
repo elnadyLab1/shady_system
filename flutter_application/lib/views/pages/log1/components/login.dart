@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_application/utils/index.dart';
-import 'action_button.dart';
+import '../../../widgets/action_button.dart';
 
 class LogIn extends StatefulWidget {
   final Function onSignUpSelected;

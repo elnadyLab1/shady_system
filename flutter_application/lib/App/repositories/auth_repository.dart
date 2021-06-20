@@ -1,34 +1,10 @@
 import 'package:get/get.dart';
 
-class AuthRepository {
-// final MyAp api;
-
-// AuthRepository({required this.api}) : assert(api != null);
-
-// getAll(){
-//   return api.getAll();
-// }
-// getId(id){
-//   return api.getId(id);
-// }
-// delete(id){
-//   return api.delete(id);
-// }
-// edit(obj){
-//   return api.edit( obj );
-// }
-// add(obj){
-//     return api.add( obj );
-// }
-
-}
-
-// ignore: one_member_abstracts
-abstract class IEmmaRepository {
+abstract class IAuthRepository {
   Future<dynamic> getPageName();
 }
 
-class EmmaRepository implements IEmmaRepository {
+class AuthRepository implements IAuthRepository {
   @override
   Future<dynamic> getPageName() => 2.delay(() => 'Emma Page');
 }

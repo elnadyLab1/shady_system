@@ -18,8 +18,7 @@ class Global {
 }
 
 enum Option {
-  // ignore: constant_identifier_names
-  LogIn,
-  // ignore: constant_identifier_names
-  SignUp,
+  logIn,
+  signUp,
+  success,
 }

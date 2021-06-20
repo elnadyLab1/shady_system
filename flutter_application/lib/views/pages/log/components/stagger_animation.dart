@@ -20,7 +20,7 @@ class StaggerAnimation extends StatelessWidget {
         ),
         buttomZoomOut = Tween(
           begin: 70.0,
-          end: 1000.0,
+          end: 2000.0,
         ).animate(
           CurvedAnimation(
             parent: buttonController,

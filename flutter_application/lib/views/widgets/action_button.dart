@@ -8,7 +8,7 @@ import 'package:flutter_application/utils/index.dart';
 Widget actionButton(String text) {
   return InkWell(
     onTap: () {
-      Get.offAndToNamed(Routes.coffee.nameToRoute());
+      Get.offAndToNamed(Routes.home.nameToRoute());
     },
     onDoubleTap: () {
       Get.offAndToNamed(Routes.logAnimation.nameToRoute());

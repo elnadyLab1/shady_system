@@ -2,17 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/utils/index.dart';
 import 'package:flutter_application/views/index.dart';
 
-class SplashPage extends StatefulWidget {
+class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);
-  @override
-  _SplashPageState createState() => _SplashPageState();
-}
 
-class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
-
     return Scaffold(
       backgroundColor: const Color.fromRGBO(3, 9, 23, 1),
       // ignore: sized_box_for_whitespace

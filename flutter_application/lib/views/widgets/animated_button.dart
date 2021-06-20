@@ -5,8 +5,10 @@ import 'package:flutter_application/routes/app_pages.dart';
 import 'package:flutter_application/utils/index.dart';
 
 class AnimatedButton extends StatefulWidget {
+  final String? routeName;
   const AnimatedButton({
     Key? key,
+    this.routeName,
   }) : super(key: key);
 
   @override
@@ -63,17 +65,13 @@ class _AnimatedButtonState extends State<AnimatedButton>
             }
           });
 
-    _scale2Animation =
-        Tween<double>(begin: 1.0, end: 32.0).animate(_scale2Controller)
-          ..addStatusListener((status) {
-            if (status == AnimationStatus.completed) {
-              // Navigator.push(
-              //     context,
-              //     PageTransition(
-              //         type: PageTransitionType.fade, child: LoginPage()));
-              Get.offNamed(Routes.log.nameToRoute());
-            }
-          });
+    _scale2Animation = Tween<double>(begin: 1.0, end: 32.0).animate(
+        _scale2Controller)
+      ..addStatusListener((status) {
+        if (status == AnimationStatus.completed) {
+          Get.offNamed(widget.routeName ?? Routes.logAnimation.nameToRoute());
+        }
+      });
   }
 
   @override
@@ -119,7 +117,6 @@ class _AnimatedButtonState extends State<AnimatedButton>
               ),
               child: InkWell(
                 onTap: () {
-                  // _scaleController.forward();
                   _playAnimation();
                 },
                 child: Stack(
@@ -142,7 +139,7 @@ class _AnimatedButtonState extends State<AnimatedButton>
                               ),
                               child: hideIcon == false
                                   ? const Icon(
-                                      Icons.arrow_forward,
+                                      Icons.arrow_forward_ios,
                                       color: Colors.white,
                                     )
                                   : Container(),

@@ -1,44 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/animation.dart';
 
-import 'package:flutter/services.dart';
-import 'package:flutter/scheduler.dart' show timeDilation;
-import 'package:flutter_application/utils/global.dart';
+import 'package:flutter_application/utils/index.dart';
 
 import 'components/login.dart';
 import 'components/signup.dart';
 
-class LogAnimationPage extends StatefulWidget {
-  const LogAnimationPage({Key? key}) : super(key: key);
+class LogPage extends StatefulWidget {
+  const LogPage({Key? key}) : super(key: key);
+
   @override
-  LogAnimationPageState createState() => LogAnimationPageState();
+  _LogPageState createState() => _LogPageState();
 }
 
-class LogAnimationPageState extends State<LogAnimationPage>
-    with TickerProviderStateMixin {
+class _LogPageState extends State<LogPage> {
   Option selectedOption = Option.logIn;
 
   @override
   Widget build(BuildContext context) {
-    timeDilation = 0.4;
     Size size = MediaQuery.of(context).size;
+
     // ignore: avoid_print
     print("height: ${size.height} --- width: ${size.width}");
 
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
     return Scaffold(
+      // ignore: sized_box_for_whitespace
       body: Container(
         width: size.width,
         height: size.height,
-        decoration: const BoxDecoration(
-          color: Colors.transparent,
-        ),
         child: Stack(
-          alignment: AlignmentDirectional.bottomCenter,
-          children: <Widget>[
+          children: [
             Row(
-              children: <Widget>[
+              children: [
                 Container(
                   height: double.infinity,
                   width: size.width / 2,
@@ -103,10 +95,10 @@ class LogAnimationPageState extends State<LogAnimationPage>
                       color: Colors.white,
                       size: 28,
                     ),
-                    SizedBox(
+                     SizedBox(
                       width: 8,
                     ),
-                    Text(
+                     Text(
                       "HOME",
                       style: TextStyle(
                         color: Colors.white,
@@ -157,10 +149,20 @@ class LogAnimationPageState extends State<LogAnimationPage>
             AnimatedSwitcher(
               duration: const Duration(milliseconds: 700),
               reverseDuration: const Duration(milliseconds: 700),
+              //Animation 1
+              // transitionBuilder: (widget, animation) => RotationTransition(
+              //   turns: animation,
+              //   child: widget,
+              // ),
+              // switchOutCurve: Curves.easeInOutCubic,
+              // switchInCurve: Curves.fastLinearToSlowEaseIn,
+
+              //Animation 2
               transitionBuilder: (Widget widget, Animation<double> animation) =>
                   ScaleTransition(child: widget, scale: animation),
+
               child: selectedOption == Option.logIn
-                  ? LogInComponent(
+                  ? LogIn(
                       key: const Key('LogIn'),
                       onSignUpSelected: () {
                         setState(() {
@@ -168,7 +170,7 @@ class LogAnimationPageState extends State<LogAnimationPage>
                         });
                       },
                     )
-                  : SignUpComponent(
+                  : SignUp(
                       key: const Key('SignUp'),
                       onLogInSelected: () {
                         setState(() {

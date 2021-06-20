@@ -3,27 +3,21 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
-// import '../repositories/index.dart';
+import 'package:flutter_application/App/repositories/auth_repository.dart';
 
 class AuthController extends GetxController {
-  // final AuthRepository? repository;
-  // AuthController({this.repository}) : assert(repository != null);
+  AuthController({this.authRepository}) : assert(authRepository != null);
+  final IAuthRepository? authRepository;
 
-  final _obj = ''.obs;
-  set obj(value) => _obj.value = value;
-  get obj => _obj.value;
-
-  RxBool _logIn = true.obs;
   final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
   final FacebookAuth _facebookAuth = FacebookAuth.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
+
   String? email, password, name;
 
   final Rxn<User> _user = Rxn<User>();
 
   String? get user => _user.value?.email;
-
-  bool get logIn => _logIn.value;
 
   @override
   void onInit() {
@@ -48,8 +42,6 @@ class AuthController extends GetxController {
 
   @override
   void onClose() {}
-
-  void logToggle(bool logIn) => _logIn = logIn as RxBool;
 
   Future<void> signInWithGoogle() async {
     GoogleSignInAccount? gooleAcount = await _googleSignIn.signIn();

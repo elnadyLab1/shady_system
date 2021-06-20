@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
+import 'package:flutter_application/App/index.dart';
 import 'routes/app_pages.dart';
 import 'theme/app_theme.dart';
 import 'utils/index.dart';
@@ -29,6 +30,7 @@ void main() async {
   //   );
   // }
 
+  // await initServices(); /// AWAIT SERVICES INITIALIZATION.
   runApp(
     DismissKeyboard(
       child: GetMaterialApp(
@@ -37,13 +39,14 @@ void main() async {
         // darkTheme: darkThemeData(context),
         title: "Application",
         translations: Translation(),
+        initialBinding: AppBinding(),
         locale: const Locale('en', 'US'),
         fallbackLocale: const Locale('en', 'US'),
         logWriterCallback: Logger.write,
         debugShowCheckedModeBanner: false,
+        defaultTransition: Transition.native,
         initialRoute: AppPages.init,
         getPages: AppPages.routes,
-        defaultTransition: Transition.fade,
         unknownRoute: AppPages.notFoundRoute,
       ),
     ),
